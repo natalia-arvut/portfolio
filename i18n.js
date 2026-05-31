@@ -2,7 +2,7 @@
 const T = {
   ru: {
     /* meta */
-    'meta.title': 'Наталья Ковпинец — дизайн и разработка под ключ',
+    'meta.title': 'Дизайн и разработка под ключ',
     'meta.desc': 'Нейродизайнер и разработчик. Бренды, сайты и приложения под ключ с использованием AI — от идеи до запуска.',
 
     /* nav */
@@ -152,7 +152,7 @@ const T = {
     'faq.a7': '<p>Я работаю короткими итерациями: каждый этап согласуем перед тем, как идти дальше. Если что-то идёт не туда — это становится видно на ранних шагах, а не в конце. Я лично заинтересована в результате и всегда стараюсь работать так, чтобы вам понравилось — ваш проект для меня не «галочка», а живая задача, в которую я вкладываюсь.</p>',
 
     /* contact */
-    'contact.title': 'Давайте сделаем ваш проект',
+    'contact.title': 'Давайте реализуем ваш проект',
     'contact.lead': 'Пришлите описание задачи и все материалы, которые у вас есть, на почту <a href="mailto:nk@arvut.ch" class="contact__inline-email">nk@arvut.ch</a> — или напишите мне в любой мессенджер. Договоримся о созвоне, на котором вы поделитесь идеей, а я расскажу, как могу её реализовать, со сроками и стоимостью.',
     'contact.cta1': 'Написать на почту',
     'contact.cta2': 'Профиль на Kwork',
@@ -190,7 +190,7 @@ const T = {
   },
 
   en: {
-    'meta.title': 'Natalia Kovpinetc — design & development end-to-end',
+    'meta.title': 'Design & development end-to-end',
     'meta.desc': 'Neural designer and developer. Brands, websites and apps end-to-end with AI — from idea to launch.',
 
     'ai.badge': 'in collaboration with <b>AI</b>',
@@ -332,7 +332,7 @@ const T = {
     'faq.q7': 'What if I don\'t like the result?',
     'faq.a7': '<p>I work in short iterations: every stage is approved before moving on. If something goes off track — it shows early, not at the end. I\'m personally invested in the result and always try to make it something you\'ll love — your project isn\'t a checkbox for me, it\'s a living task I put myself into.</p>',
 
-    'contact.title': 'Let\'s build your project',
+    'contact.title': 'Let\'s build your project together',
     'contact.lead': 'Send the task description and any materials you have to <a href="mailto:nk@arvut.ch" class="contact__inline-email">nk@arvut.ch</a> — or message me on any messenger. We\'ll arrange a call where you share the idea, and I\'ll explain how I can build it, with timing and cost.',
     'contact.cta1': 'Email me',
     'contact.cta2': 'Kwork profile',

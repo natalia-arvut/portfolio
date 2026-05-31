@@ -203,6 +203,24 @@ modal.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) { modal.hidden = true; document.body.style.overflow = ''; } });
 
+// При смене языка — подменяем источники сертификатов (RU = -ru, EN = базовая версия)
+function applyCertLang() {
+  const lang = (window.i18nLang && window.i18nLang()) || 'ru';
+  document.querySelectorAll('.cert--thumb[data-cert-base]').forEach(btn => {
+    const base = btn.dataset.certBase;
+    const tryPath = (lang === 'ru') ? `assets/${base}-ru.png` : `assets/${base}.png`;
+    const enPath = `assets/${base}.png`;
+    const img = btn.querySelector('img');
+    // Проверка существования через Image()
+    const probe = new Image();
+    probe.onload = () => { img.src = tryPath; btn.dataset.cert = tryPath; };
+    probe.onerror = () => { img.src = enPath; btn.dataset.cert = enPath; };
+    probe.src = tryPath;
+  });
+}
+document.addEventListener('DOMContentLoaded', applyCertLang);
+document.addEventListener('i18n:changed', applyCertLang);
+
 // ===== ОТЗЫВЫ =====
 const reviewsModal = document.getElementById('reviewsModal');
 const reviewsList = document.getElementById('reviewsList');
