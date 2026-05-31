@@ -352,7 +352,19 @@ a { color: inherit; text-decoration: none; }
 .case__btn:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
 
 /* ============ ОБО МНЕ ============ */
-.about { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: center; }
+.about {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "photo title"
+    "photo text";
+  column-gap: 56px; row-gap: 0;
+  align-items: start;
+}
+.about__title { grid-area: title; align-self: end; margin: 0 0 22px 0; }
+.about__photo { grid-area: photo; align-self: start; }
+.about__text { grid-area: text; }
 .about__photo {
   border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);
   aspect-ratio: 3 / 4; position: relative;
@@ -622,17 +634,23 @@ a { color: inherit; text-decoration: none; }
     align-items: flex-start;
     text-align: left;
   }
-  /* Порядок: h2 → фото → параграфы. display:contents выносит детей текста наверх */
-  .about__text { display: contents; }
-  .about__text > * { order: 3; }
-  .about__text > .section__title { order: 0; margin: 0 0 14px 0 !important; }
-  .about__text > p { margin: 0 0 12px 0 !important; font-size: 15px !important; }
-  .about__text > .about__list { margin: 0 0 14px 0 !important; }
-  .about__text > .about__list li { margin-bottom: 8px !important; }
-  .about__text > .about__certs { margin: 0 0 16px 0 !important; }
-  .about__text > .about__actions { margin: 0 !important; }
-  .about__photo { order: 1; align-self: flex-start; margin: 2px 0 14px 0 !important; }
+  /* На мобильной: title → photo → text простой grid */
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "photo"
+      "text";
+    column-gap: 0; row-gap: 0;
+  }
+  .about__title { margin: 0 0 14px 0 !important; align-self: start; }
+  .about__photo { margin: 0 0 16px 0 !important; align-self: flex-start; }
   .about__photo--avatar { width: 170px !important; height: 170px !important; }
+  .about__text p { margin: 0 0 12px 0 !important; font-size: 15px !important; }
+  .about__text .about__list { margin: 0 0 14px 0 !important; }
+  .about__text .about__list li { margin-bottom: 8px !important; }
+  .about__text .about__certs { margin: 0 0 16px 0 !important; }
+  .about__text .about__actions { margin: 0 !important; }
 }
 
 /* Карточки кейсов всегда 2 колонки 50/50 на десктопе, на мобильной — в столбик */
