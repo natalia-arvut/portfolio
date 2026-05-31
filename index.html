@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -439,9 +439,9 @@
       const prev = document.getElementById('certPrev');
       const next = document.getElementById('certNext');
       const thumbs = [...document.querySelectorAll('.cert--thumb')];
-      const sources = thumbs.map(t => t.dataset.cert);
+      const getSources = () => thumbs.map(t => t.dataset.cert);
       let i = 0;
-      const show = (idx) => { i = (idx + sources.length) % sources.length; imgEl.src = sources[i]; };
+      const show = (idx) => { const s = getSources(); i = (idx + s.length) % s.length; imgEl.src = s[i]; };
       thumbs.forEach((btn, idx) => btn.addEventListener('click', () => { show(idx); modal.classList.add('open'); }));
       prev.addEventListener('click', e => { e.stopPropagation(); show(i - 1); });
       next.addEventListener('click', e => { e.stopPropagation(); show(i + 1); });
