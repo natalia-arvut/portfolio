@@ -609,15 +609,19 @@ a { color: inherit; text-decoration: none; }
   .about {
     display: flex !important;
     flex-direction: column;
-    gap: 18px;
+    gap: 0;
     align-items: flex-start;
     text-align: left;
   }
-  /* Порядок: h2 → фото → параграфы. Через display:contents выносим детей текста наверх */
+  /* Порядок: h2 → фото → параграфы. display:contents выносит детей текста наверх */
   .about__text { display: contents; }
-  .about__text > * { order: 3; margin-top: 4px; }
-  .about__text > .section__title { order: 0; margin-bottom: 0; }
-  .about__photo { order: 1; align-self: flex-start; margin: 0; }
+  .about__text > * { order: 3; margin: 0 0 14px 0; }
+  .about__text > .section__title { order: 0; margin: 0 0 16px 0; }
+  .about__text > p { margin: 0 0 14px 0; }
+  .about__text > .about__list { margin: 0 0 18px 0; }
+  .about__text > .about__certs { margin: 4px 0 18px 0; }
+  .about__text > .about__actions { margin: 0; }
+  .about__photo { order: 1; align-self: flex-start; margin: 0 0 18px 0; }
   .about__photo--avatar { width: 170px !important; height: 170px !important; }
 }
 
