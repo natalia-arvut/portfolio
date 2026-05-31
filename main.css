@@ -634,24 +634,28 @@ a { color: inherit; text-decoration: none; }
     align-items: flex-start;
     text-align: left;
   }
-  /* На мобильной: title → photo → text простой grid */
+  /* На мобильной: title → photo → text. Все отступы через gap = 22px */
   .about {
     grid-template-columns: 1fr;
     grid-template-areas:
       "title"
       "photo"
       "text";
-    column-gap: 0; row-gap: 0;
+    column-gap: 0; row-gap: 22px;
   }
-  .about__title { margin: 0 0 22px 0 !important; align-self: start; }
-  .about__photo { margin: 0 0 22px 0 !important; align-self: flex-start; }
+  .about__title { margin: 0 !important; align-self: start; }
+  .about__photo { margin: 0 !important; align-self: flex-start; }
   .about__photo--avatar { width: 170px !important; height: 170px !important; }
-  .about__text p { margin: 0 0 22px 0 !important; font-size: 15px !important; }
-  .about__text .about__list { margin: 0 0 22px 0 !important; }
+  /* Внутри about__text — flex с одинаковым gap */
+  .about__text {
+    display: flex !important;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .about__text > * { margin: 0 !important; }
+  .about__text p { font-size: 15px !important; }
   .about__text .about__list li { margin-bottom: 10px !important; }
   .about__text .about__list li:last-child { margin-bottom: 0 !important; }
-  .about__text .about__certs { margin: 0 0 22px 0 !important; }
-  .about__text .about__actions { margin: 0 !important; }
 }
 
 /* Карточки кейсов всегда 2 колонки 50/50 на десктопе, на мобильной — в столбик */
