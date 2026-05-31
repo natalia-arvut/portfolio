@@ -430,20 +430,24 @@ function applyI18n(lang) {
   // цены: data-price="20000" → перерисовываем формат
   document.querySelectorAll('[data-price]').forEach(el => {
     const rub = parseInt(el.dataset.price, 10);
+    const rawPrefix = el.dataset.pricePrefix || '';
+    // Если префикс содержит буквы (от, from) — добавляем пробел; для "+" пробела не нужно
+    const sep = rawPrefix && /[a-zа-я]/i.test(rawPrefix) ? ' ' : '';
     if (lang === 'ru') {
-      const prefix = el.dataset.pricePrefix || '';
-      el.textContent = prefix + rub.toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽';
+      el.textContent = rawPrefix + sep + rub.toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽';
     } else {
-      const prefix = (el.dataset.pricePrefix || '').replace('от ', 'from ').trim();
-      el.textContent = (prefix ? prefix + ' ' : '') + rubToUsd(rub);
+      const enPrefix = rawPrefix === 'от' ? 'from' : rawPrefix;
+      const enSep = enPrefix && /[a-z]/i.test(enPrefix) ? ' ' : '';
+      el.textContent = enPrefix + enSep + rubToUsd(rub);
     }
   });
   // диапазоны цен: data-price-range="5000-25000" с префиксом "+"
   document.querySelectorAll('[data-price-range]').forEach(el => {
     const [a, b] = el.dataset.priceRange.split('-').map(s => parseInt(s, 10));
     const sign = el.dataset.pricePrefix || '';
+    const fmt = n => n.toLocaleString('ru-RU').replace(/,/g,' ');
     if (lang === 'ru') {
-      el.textContent = (sign ? sign + ' ' : '') + a.toLocaleString('ru-RU').replace(/,/g,' ') + ' до ' + sign + b.toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽';
+      el.textContent = (sign ? 'от ' + sign : '') + fmt(a) + ' до ' + sign + fmt(b) + ' ₽';
     } else {
       el.textContent = (sign ? 'from ' : '') + rubToUsd(a) + ' to ' + (sign ? '+' : '') + rubToUsd(b);
     }
