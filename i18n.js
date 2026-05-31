@@ -206,7 +206,7 @@ const T = {
     'nav.services': 'Services',
     'nav.portfolio': 'Portfolio',
     'nav.pricing': 'Pricing',
-    'nav.about': 'About',
+    'nav.about': 'About me',
     'nav.faq': 'FAQ',
     'nav.cta': 'Discuss project',
 
@@ -316,7 +316,7 @@ const T = {
     'p.ai.x4': '+ Voice AI agent',
     'p.ai.x5': '+ Promo video (or video with avatar)',
 
-    'about.title': 'About',
+    'about.title': 'About me',
     'about.p1': 'My name is Natalia. I\'m a neural designer and developer: I combine years of experience in graphic design with modern AI tools. I don\'t just draw a pretty picture — I take the project all the way to a working site or app.',
     'about.p2': 'I actively use AI in my work: it speeds things up and strengthens the result. My background in marketing and psychology helps me build products that actually sell.',
     'about.l1': 'Full cycle: brand → design → development → launch',
