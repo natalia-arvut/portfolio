@@ -541,11 +541,11 @@ a { color: inherit; text-decoration: none; }
   .nav__burger.open span:nth-child(2) { opacity: 0; }
   .nav__burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-  /* Меню — красивое с переключателем языка и CTA */
+  /* Меню — компактное, только пункты + переключатель языка */
   .nav__links {
-    position: fixed; top: 0; right: 0; height: 100vh; width: min(86vw, 360px);
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 300px);
     flex-direction: column; align-items: stretch; justify-content: flex-start;
-    gap: 0; padding: 96px 32px 32px;
+    gap: 0; padding: 88px 26px 26px;
     background:
       radial-gradient(400px 300px at 100% 0%, rgba(246, 0, 255, 0.18), transparent 60%),
       radial-gradient(400px 400px at 0% 100%, rgba(0, 224, 248, 0.18), transparent 60%),
@@ -557,24 +557,21 @@ a { color: inherit; text-decoration: none; }
   }
   .nav__links.open { transform: translateX(0); }
   .nav__links a {
-    padding: 16px 4px; font-size: 18px; font-weight: 600; color: var(--text);
+    padding: 12px 4px; font-size: 15px; font-weight: 600; color: var(--text);
     border-bottom: 1px solid rgba(255,255,255,.06);
   }
   .nav__links a:hover, .nav__links a:active { color: #00e0f8; }
-  /* CTA внутри мобильного меню */
-  .nav__cta--mobile {
-    text-align: center; margin-top: 24px;
-    padding: 14px 24px; border-radius: 999px;
-  }
+  /* CTA внутри мобильного меню — убираем */
+  .nav__cta--mobile { display: none !important; }
   /* Переключатель языка внутри меню */
   .nav__lang-mobile {
-    gap: 6px; padding: 6px; border-radius: 999px;
+    gap: 6px; padding: 5px; border-radius: 999px;
     border: 1px solid var(--border); background: rgba(255,255,255,.03);
-    margin: 20px auto 0; align-self: center;
+    margin: 24px auto 0; align-self: center;
   }
   .nav__lang-mobile button {
-    font: 700 13px/1 'Geist', sans-serif; letter-spacing: .08em;
-    padding: 8px 16px; min-width: 50px; background: transparent; border: 0;
+    font: 700 12px/1 'Geist', sans-serif; letter-spacing: .08em;
+    padding: 7px 14px; min-width: 44px; background: transparent; border: 0;
     border-radius: 999px; color: var(--muted); cursor: pointer;
   }
   .nav__lang-mobile button.active { background: rgba(0,224,248,.18); color: #00e0f8; }
@@ -596,9 +593,24 @@ a { color: inherit; text-decoration: none; }
   .hero__stats b { font-size: 24px; }
   .hero__stats span { font-size: 12px; }
 
-  .about { grid-template-columns: 1fr; gap: 28px; justify-items: center; text-align: left; }
-  .about__photo { max-width: 240px; }
-  .about__text { text-align: left; }
+  .about {
+    grid-template-columns: 1fr; gap: 18px;
+    justify-items: stretch; text-align: left;
+    display: flex !important; flex-direction: column;
+  }
+  /* Порядок на мобильной: заголовок → фото → текст */
+  .about__text { display: contents; }
+  .about__text > * { order: 3; }
+  .about__text > .section__title { order: 0; margin-bottom: 0; }
+  .about__photo { order: 1; align-self: flex-start; margin: 6px 0; }
+  /* Сертификаты — по 2 в ряд на мобильной */
+  .about__certs { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px !important; }
+  .cert.cert--thumb { width: 100% !important; height: auto !important; aspect-ratio: 16/10; }
+}
+
+/* На мобильной — порядок «Обо мне»: h2 → фото → тексты-параграфы */
+@media (max-width: 760px) {
+  .about__photo--avatar { width: 170px !important; height: 170px !important; }
 }
 
 /* Карточки кейсов всегда 2 колонки 50/50 на десктопе, на мобильной — в столбик */
@@ -612,8 +624,11 @@ a { color: inherit; text-decoration: none; }
   .section__title { font-size: clamp(26px, 7vw, 34px); margin-bottom: 12px; }
   .section__lead { font-size: 15px; }
 
-  /* Кейсы — в столбик, обложка сверху с правильной высотой */
+  /* Кейсы — в столбик, обложка ВСЕГДА сверху (отменяем чередование) */
   #work .case { grid-template-columns: 1fr !important; }
+  #work .case .case__visual--shot { order: 0 !important; }
+  #work .case .case__body { order: 1 !important; }
+  #work .case:nth-child(even) .case__visual { order: 0 !important; }
   #work .case__visual--shot {
     width: 100% !important; height: auto !important;
     aspect-ratio: 16/9; min-height: 200px;
@@ -624,22 +639,25 @@ a { color: inherit; text-decoration: none; }
   .case__roles { gap: 6px; margin-bottom: 18px; }
   .case__roles li { font-size: 12px; padding: 5px 10px; }
 
-  /* Цены — компактный layout: текст сверху, цена сразу под ним, не под details */
+  /* Цены — компактный layout: цена сверху, описание ниже */
   .price-row {
     flex-direction: column; align-items: flex-start; gap: 12px;
     padding: 20px 18px;
   }
   .price-row__info { width: 100%; order: 1; }
+  /* Цена inline-block с auto-width, чтобы градиент полностью был на тексте */
   .price-row__value {
-    order: 0; min-width: 0; text-align: left;
-    font-size: 22px; padding-bottom: 4px;
-    border-bottom: 1px solid rgba(0, 224, 248, .15);
-    width: 100%;
+    order: 0; min-width: 0;
+    display: inline-block; width: auto;
+    font-size: 22px;
   }
   .price-row__info h3 { font-size: 17px; margin-bottom: 4px; }
   .price-row__info p { font-size: 13px; }
   .price-extras__list { max-width: 100% !important; }
   .price-extras__list li { font-size: 13px; gap: 10px; }
+  /* Итог "Под ключ с нуля" — диапазон в одну строку, перенос всей суммы */
+  .price-extras__total { display: block; }
+  .price-extras__total b { display: inline-block; white-space: nowrap; margin-top: 4px; }
 
   /* FAQ — компактнее */
   .faq__item summary { padding: 16px 20px; padding-right: 50px; font-size: 15px; }
