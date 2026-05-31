@@ -469,15 +469,15 @@ function applyI18n(lang) {
       el.textContent = enPrefix + enSep + rubToUsd(rub);
     }
   });
-  // диапазоны цен: data-price-range="5000-25000" с префиксом "+"
+  // диапазоны цен: data-price-range="5000-25000"; всегда "от … до …" / "from … to …"
   document.querySelectorAll('[data-price-range]').forEach(el => {
     const [a, b] = el.dataset.priceRange.split('-').map(s => parseInt(s, 10));
     const sign = el.dataset.pricePrefix || '';
     const fmt = n => n.toLocaleString('ru-RU').replace(/,/g,' ');
     if (lang === 'ru') {
-      el.textContent = (sign ? 'от ' + sign : '') + fmt(a) + ' до ' + sign + fmt(b) + ' ₽';
+      el.textContent = 'от ' + sign + fmt(a) + ' до ' + sign + fmt(b) + ' ₽';
     } else {
-      el.textContent = (sign ? 'from ' : '') + rubToUsd(a) + ' to ' + (sign ? '+' : '') + rubToUsd(b);
+      el.textContent = 'from ' + (sign ? sign : '') + rubToUsd(a) + ' to ' + (sign ? sign : '') + rubToUsd(b);
     }
   });
 
