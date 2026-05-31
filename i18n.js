@@ -66,6 +66,7 @@ const T = {
     'case.ar.r': ['Логотип и бренд','Дизайн сайта','Тексты','Сборка','Видео'],
 
     'role.globe.title': 'Многоязычный сайт',
+    'case.view': 'Посмотреть',
 
     /* pricing */
     'pricing.title': 'Цены',
@@ -258,6 +259,7 @@ const T = {
     'case.ar.r': ['Logo & brand','Website design','Copy','Build','Video'],
 
     'role.globe.title': 'Multilingual website',
+    'case.view': 'Visit',
 
     'pricing.title': 'Pricing',
     'pricing.lead': 'Starting prices are the minimum. Final cost depends on scope and is discussed per task. The "from" price assumes you already have materials (copy, brief, idea, sketches). If I do everything from scratch — the cost is built up from the add-ons below. I\'ll quote exactly after a short brief.',
