@@ -136,32 +136,117 @@ const services = {
   }
 };
 
+const servicesEN = {
+  'brand-site': {
+    title: 'Brand + website end-to-end',
+    intro: 'A cohesive brand image and a working, finished website — as one package, from one contractor. No disconnect between logo, identity and site.',
+    blocks: [
+      { h: "What's included", items: [
+        'Brief and competitor analysis',
+        '2-3 logo concepts to choose from',
+        'Final logo in PNG / SVG / PDF formats',
+        'Brand identity: palette, typography, graphics',
+        'Brand guidelines with usage rules',
+        'Website design (landing or multi-page)',
+        'Real code + responsive for all devices',
+        'Forms, messengers and analytics setup',
+        'Hosting deployment, domain setup, final checks'
+      ]},
+      { h: 'Timing and price', items: [
+        'Timing: 1-4 weeks',
+        'Cost: from $250',
+        'Payment: 50% upfront, 50% after approval'
+      ]}
+    ]
+  },
+  'websites': {
+    title: 'Websites end-to-end',
+    intro: 'Landing or multi-page website with design, copy and real code. A finished product you can show clients right away.',
+    blocks: [
+      { h: "What's included", items: [
+        'Structure and prototype in Figma',
+        'Modern design tailored to your brand',
+        'Sales copy or adaptation of yours',
+        'Image and graphic selection',
+        'Responsive code: mobile, tablet, desktop',
+        'Speed optimization (90+ PageSpeed)',
+        'Forms and messenger integration',
+        'SEO meta tags and Open Graph for social',
+        'Google / Yandex Analytics setup',
+        'Hosting deployment'
+      ]},
+      { h: 'Timing and price', items: [
+        'Landing — 1-2 weeks, from $200',
+        'Multi-page — 2-4 weeks, from $400',
+        'Payment: 50% upfront, 50% after approval'
+      ]}
+    ]
+  },
+  'apps': {
+    title: 'App development',
+    intro: 'Web apps and platforms with real functionality — from a working prototype to a full product with database and user accounts.',
+    blocks: [
+      { h: "What's included", items: [
+        'Task analysis and feature scheme',
+        'Interface prototype in Figma',
+        'UI / UX design for all screens',
+        'Frontend on modern stack',
+        'Backend and database',
+        'User authentication and personal accounts',
+        'Payment integrations (if needed)',
+        'Testing and debugging',
+        'Deploy and domain setup'
+      ]},
+      { h: 'End-to-end — if you only have an idea', items: [
+        'I take everything: branding, design, development, launch',
+        'One contractor from idea to working app'
+      ]},
+      { h: 'Mobile version — as a separate service', items: [
+        'To my app (if I built the desktop one) — from $200',
+        'To your existing app — from $400'
+      ]},
+      { h: 'Timing and price', items: [
+        'Prototype — from 1 week, from $250',
+        'Full app — from 1 month, from $600',
+        'Mobile version — 1-3 weeks',
+        'Payment by stages'
+      ]}
+    ]
+  },
+  'ai': {
+    title: 'Automation & AI',
+    intro: 'I take routine off your hands using AI and integrations. Your business runs faster, and you do less manual work.',
+    blocks: [
+      { h: 'What I do', items: [
+        'Chatbots for messengers and websites',
+        'AI assistants for business',
+        'Apps for routine automation (reports, requests, document processing)',
+        'Automated email and messenger campaigns',
+        'Data parsing and automated information gathering',
+        'CRM, Google Sheets, Notion, messenger integrations',
+        'Voice AI agents',
+        'Promo videos and AI avatar videos'
+      ]},
+      { h: 'Timing and price', items: [
+        'Timing: up to 4 weeks depending on the task',
+        'Cost: from $250',
+        'Ongoing support available after launch'
+      ]}
+    ]
+  }
+};
+
 function renderService(key) {
   const lang = (window.i18nLang && window.i18nLang()) || 'ru';
-  const s = services[key];
+  const dict = lang === 'en' ? servicesEN : services;
+  const s = dict[key] || services[key];
   if (!s) { modalContent.innerHTML = ''; return; }
-  const t = (rusText) => (lang === 'en' && window.i18nConvertPrice) ? window.i18nConvertPrice(rusText, 'en') : rusText;
-  // EN-перевод базовых заголовков и сроков
-  const enMap = {
-    'Что входит': 'What\'s included',
-    'Сроки и цена': 'Timing and price',
-    'Под ключ — если у вас только идея': 'End-to-end — if you only have an idea',
-    'Мобильная версия — отдельной услугой': 'Mobile version — as a separate service',
-    'Что я делаю': 'What I do'
-  };
-  const tHead = (h) => (lang === 'en' && enMap[h]) ? enMap[h] : h;
-  const enTitles = {
-    'Бренд + сайт под ключ': 'Brand + website end-to-end',
-    'Сайты под ключ': 'Websites end-to-end',
-    'Разработка приложений': 'App development',
-    'Автоматизация и AI': 'Automation & AI'
-  };
-  modalTitle.textContent = (lang === 'en' && enTitles[s.title]) ? enTitles[s.title] : s.title;
+  modalTitle.textContent = s.title;
   modalContent.innerHTML = `
-    <p class="modal__intro">${t(s.intro)}</p>
+    <p class="modal__intro">${s.intro}</p>
     ${s.blocks.map(b => `
-      <h4 class="modal__h">${tHead(b.h)}</h4>
-      <ul class="modal__list">${b.items.map(i => `<li>${t(i)}</li>`).join('')}</ul>
+      <h4 class="modal__h">${b.h}</h4>
+      <ul class="modal__list">${b.items.map(i => `<li>${i}</li>`).join('')}</ul>
     `).join('')}
   `;
 }
