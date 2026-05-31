@@ -311,6 +311,22 @@ function applyCertLang() {
 document.addEventListener('DOMContentLoaded', applyCertLang);
 document.addEventListener('i18n:changed', applyCertLang);
 
+// Подмена обложек кейсов по языку (--shot)
+function applyCoverLang() {
+  const lang = (window.i18nLang && window.i18nLang()) || 'ru';
+  document.querySelectorAll('[data-cover-base]').forEach(el => {
+    const base = el.dataset.coverBase;
+    const tryPath = (lang === 'ru') ? `assets/${base}-ru.png` : `assets/${base}.png`;
+    const enPath = `assets/${base}.png`;
+    const probe = new Image();
+    probe.onload = () => { el.style.setProperty('--shot', `url('${tryPath}')`); };
+    probe.onerror = () => { el.style.setProperty('--shot', `url('${enPath}')`); };
+    probe.src = tryPath;
+  });
+}
+document.addEventListener('DOMContentLoaded', applyCoverLang);
+document.addEventListener('i18n:changed', applyCoverLang);
+
 // ===== ОТЗЫВЫ =====
 const reviewsModal = document.getElementById('reviewsModal');
 const reviewsList = document.getElementById('reviewsList');
