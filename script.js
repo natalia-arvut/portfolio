@@ -10,15 +10,14 @@ window.addEventListener('scroll', onScroll);
 // Мобильное меню
 const burger = document.getElementById('burger');
 const links = document.querySelector('.nav__links');
-burger.addEventListener('click', () => {
-  links.classList.toggle('open');
-  burger.classList.toggle('open');
-});
+function setMenu(open) {
+  links.classList.toggle('open', open);
+  burger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(!links.classList.contains('open')));
 links.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => {
-    links.classList.remove('open');
-    burger.classList.remove('open');
-  })
+  a.addEventListener('click', () => setMenu(false))
 );
 
 // Появление блоков при скролле

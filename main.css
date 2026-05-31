@@ -554,9 +554,10 @@ a { color: inherit; text-decoration: none; }
   .nav__burger.open span:nth-child(2) { opacity: 0; }
   .nav__burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-  /* Меню — компактное, только пункты + переключатель языка */
+  /* Меню — компактное, фиксированное на весь экран */
   .nav__links {
-    position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 300px);
+    position: fixed; top: 0; right: 0; bottom: 0;
+    height: 100vh; height: 100dvh; width: min(78vw, 300px);
     flex-direction: column; align-items: stretch; justify-content: flex-start;
     gap: 0; padding: 88px 26px 26px;
     background:
@@ -567,6 +568,14 @@ a { color: inherit; text-decoration: none; }
     box-shadow: -20px 0 60px rgba(0,0,0,.4);
     transform: translateX(100%); transition: transform .35s cubic-bezier(.4,0,.2,1); z-index: 100;
     overflow-y: auto;
+  }
+  /* Декоративный логотип внизу меню */
+  .nav__links::after {
+    content: '';
+    margin: auto auto 0;
+    width: 90px; height: 90px;
+    background: url('assets/favicon-192.png') center/contain no-repeat;
+    opacity: .9;
   }
   .nav__links.open { transform: translateX(0); }
   .nav__links a {
