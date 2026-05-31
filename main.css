@@ -661,6 +661,19 @@ a { color: inherit; text-decoration: none; }
 /* Карточки кейсов всегда 2 колонки 50/50 на десктопе, на мобильной — в столбик */
 .case { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; }
 
+/* Кейсы — в столбик от 1100px и ниже (планшет landscape + мобильный) */
+@media (max-width: 1100px) {
+  #work .case { grid-template-columns: 1fr !important; }
+  #work .case .case__visual--shot { order: 0 !important; }
+  #work .case .case__body { order: 1 !important; }
+  #work .case:nth-child(even) .case__visual { order: 0 !important; }
+  #work .case__visual--shot {
+    width: 100% !important; height: auto !important;
+    aspect-ratio: 16/9; min-height: 220px;
+    background-position: left top !important;
+  }
+}
+
 @media (max-width: 720px) {
   /* Уменьшаем отступы между секциями на мобильной */
   .section { padding: 40px var(--pad) !important; }
@@ -668,17 +681,6 @@ a { color: inherit; text-decoration: none; }
   .section__head { margin-bottom: 20px; }
   .section__title { font-size: clamp(26px, 7vw, 34px); margin-bottom: 12px; }
   .section__lead { font-size: 15px; }
-
-  /* Кейсы — в столбик, обложка ВСЕГДА сверху (отменяем чередование) */
-  #work .case { grid-template-columns: 1fr !important; }
-  #work .case .case__visual--shot { order: 0 !important; }
-  #work .case .case__body { order: 1 !important; }
-  #work .case:nth-child(even) .case__visual { order: 0 !important; }
-  #work .case__visual--shot {
-    width: 100% !important; height: auto !important;
-    aspect-ratio: 16/9; min-height: 200px;
-    background-position: left top !important;
-  }
   .case__body { padding: 22px 20px !important; }
   .case__body h3 { font-size: 20px !important; }
   .case__body > p { font-size: 14.5px; margin-bottom: 16px; }
