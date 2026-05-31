@@ -172,6 +172,14 @@ const T = {
     'rv.form.text': 'Расскажите, что вам понравилось и что можно улучшить',
     'rv.form.submit': 'Опубликовать',
     'rv.form.note': 'Я буду благодарна за ваш отзыв — он помогает мне становиться лучше и важен для тех, кто ещё думает обратиться.',
+    'a11y.menu': 'Меню',
+    'a11y.close': 'Закрыть',
+    'a11y.prev': 'Предыдущий',
+    'a11y.next': 'Следующий',
+    'a11y.cert': 'Сертификат',
+    'cert.title.1': 'Нейросети: от принципов к практике',
+    'cert.title.2': 'Perplexity: от новичка до pro',
+    'cert.title.3': 'Вайб-Маркетинг',
 
     /* service modal */
     'sm.calc': 'Рассчитать стоимость →',
@@ -350,6 +358,14 @@ const T = {
     'rv.form.text': 'Tell what you liked and what could be improved',
     'rv.form.submit': 'Publish',
     'rv.form.note': 'I\'ll be grateful for your review — it helps me grow and matters for those still deciding whether to reach out.',
+    'a11y.menu': 'Menu',
+    'a11y.close': 'Close',
+    'a11y.prev': 'Previous',
+    'a11y.next': 'Next',
+    'a11y.cert': 'Certificate',
+    'cert.title.1': 'Neural Networks: From Principle to Practice',
+    'cert.title.2': 'Perplexity: From Beginner to Pro',
+    'cert.title.3': 'Vibe Marketing',
 
     'sm.calc': 'Calculate price →',
     'sm.cta': 'Discuss project',
@@ -417,6 +433,16 @@ function applyI18n(lang) {
   document.querySelectorAll('[data-i18n-title]').forEach(el => {
     const key = el.dataset.i18nTitle;
     if (T[lang][key] != null) el.title = T[lang][key];
+  });
+  // aria-label
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.dataset.i18nAria;
+    if (T[lang][key] != null) el.setAttribute('aria-label', T[lang][key]);
+  });
+  // alt
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.dataset.i18nAlt;
+    if (T[lang][key] != null) el.alt = T[lang][key];
   });
   // role lists (массивы)
   document.querySelectorAll('[data-i18n-roles]').forEach(ul => {

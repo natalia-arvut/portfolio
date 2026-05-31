@@ -113,7 +113,7 @@
         </div>
         <a href="#contact" class="nav__cta" data-i18n="nav.cta">Обсудить проект</a>
       </div>
-      <button class="nav__burger" id="burger" aria-label="Меню">
+      <button class="nav__burger" id="burger" aria-label="Меню" data-i18n-aria="a11y.menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -379,9 +379,9 @@
         <li data-i18n="about.l3">Обучение в онлайн-университете ZeroCoder</li>
       </ul>
       <div class="about__certs" id="certs">
-        <button class="cert cert--thumb" data-cert-base="cert-3" data-cert="assets/cert-3.png" data-index="0" title="Вайб-Маркетинг"><img src="assets/cert-3.png" alt="Сертификат: Вайб-Маркетинг" /></button>
-        <button class="cert cert--thumb" data-cert-base="cert-2" data-cert="assets/cert-2.png" data-index="1" title="Perplexity"><img src="assets/cert-2.png" alt="Сертификат: Perplexity" /></button>
-        <button class="cert cert--thumb" data-cert-base="cert-1" data-cert="assets/cert-1.png" data-index="2" title="Нейросети"><img src="assets/cert-1.png" alt="Сертификат: Нейросети" /></button>
+        <button class="cert cert--thumb" data-cert-base="cert-3" data-cert="assets/cert-3.png" data-index="0" title="Вайб-Маркетинг" data-i18n-title="cert.title.3"><img src="assets/cert-3.png" alt="" /></button>
+        <button class="cert cert--thumb" data-cert-base="cert-2" data-cert="assets/cert-2.png" data-index="1" title="Perplexity"><img src="assets/cert-2.png" alt="" /></button>
+        <button class="cert cert--thumb" data-cert-base="cert-1" data-cert="assets/cert-1.png" data-index="2" title="Нейросети" data-i18n-title="cert.title.1"><img src="assets/cert-1.png" alt="" /></button>
       </div>
       <div class="about__actions">
         <a href="#contact" class="btn btn--primary" data-i18n="about.cta1">Обсудить проект</a>
@@ -426,9 +426,9 @@
 
   <!-- МОДАЛКА УВЕЛИЧЕНИЯ СЕРТИФИКАТА -->
   <div class="cert-modal" id="certModal">
-    <button class="cert-modal__close" id="certModalClose" aria-label="Закрыть">×</button>
-    <button class="cert-modal__nav cert-modal__nav--prev" id="certPrev" aria-label="Предыдущий">‹</button>
-    <button class="cert-modal__nav cert-modal__nav--next" id="certNext" aria-label="Следующий">›</button>
+    <button class="cert-modal__close" id="certModalClose" aria-label="Закрыть" data-i18n-aria="a11y.close">×</button>
+    <button class="cert-modal__nav cert-modal__nav--prev" id="certPrev" aria-label="Previous" data-i18n-aria="a11y.prev">‹</button>
+    <button class="cert-modal__nav cert-modal__nav--next" id="certNext" aria-label="Next" data-i18n-aria="a11y.next">›</button>
     <img id="certModalImg" src="" alt="Сертификат" />
   </div>
   <script>
@@ -460,7 +460,7 @@
   <div class="modal" id="reviewsModal" hidden>
     <div class="modal__backdrop" data-close></div>
     <div class="modal__box modal__box--wide" role="dialog" aria-modal="true">
-      <button class="modal__close" data-close aria-label="Закрыть">×</button>
+      <button class="modal__close" data-close aria-label="Закрыть" data-i18n-aria="a11y.close">×</button>
       <h3 data-i18n="rv.title">Отзывы клиентов</h3>
 
       <div class="reviews" id="reviewsList">
@@ -487,7 +487,7 @@
   <div class="modal" id="modal" hidden>
     <div class="modal__backdrop" data-close></div>
     <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal__close" data-close aria-label="Закрыть">×</button>
+      <button class="modal__close" data-close aria-label="Закрыть" data-i18n-aria="a11y.close">×</button>
       <h3 id="modalTitle">Подробнее об услуге</h3>
       <div id="modalContent" class="modal__content"></div>
       <div class="modal__actions">
@@ -503,7 +503,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="i18n.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
