@@ -643,13 +643,14 @@ a { color: inherit; text-decoration: none; }
       "text";
     column-gap: 0; row-gap: 0;
   }
-  .about__title { margin: 0 0 14px 0 !important; align-self: start; }
-  .about__photo { margin: 0 0 16px 0 !important; align-self: flex-start; }
+  .about__title { margin: 0 0 22px 0 !important; align-self: start; }
+  .about__photo { margin: 0 0 22px 0 !important; align-self: flex-start; }
   .about__photo--avatar { width: 170px !important; height: 170px !important; }
-  .about__text p { margin: 0 0 12px 0 !important; font-size: 15px !important; }
-  .about__text .about__list { margin: 0 0 14px 0 !important; }
-  .about__text .about__list li { margin-bottom: 8px !important; }
-  .about__text .about__certs { margin: 0 0 16px 0 !important; }
+  .about__text p { margin: 0 0 22px 0 !important; font-size: 15px !important; }
+  .about__text .about__list { margin: 0 0 22px 0 !important; }
+  .about__text .about__list li { margin-bottom: 10px !important; }
+  .about__text .about__list li:last-child { margin-bottom: 0 !important; }
+  .about__text .about__certs { margin: 0 0 22px 0 !important; }
   .about__text .about__actions { margin: 0 !important; }
 }
 
