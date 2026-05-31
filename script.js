@@ -10,9 +10,15 @@ window.addEventListener('scroll', onScroll);
 // Мобильное меню
 const burger = document.getElementById('burger');
 const links = document.querySelector('.nav__links');
-burger.addEventListener('click', () => links.classList.toggle('open'));
+burger.addEventListener('click', () => {
+  links.classList.toggle('open');
+  burger.classList.toggle('open');
+});
 links.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => links.classList.remove('open'))
+  a.addEventListener('click', () => {
+    links.classList.remove('open');
+    burger.classList.remove('open');
+  })
 );
 
 // Появление блоков при скролле
