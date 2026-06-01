@@ -245,13 +245,8 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .price-extras__list { max-width: 100%; }
 }
-.price-extras__seo-note {
-  margin: 10px 0 0; padding: 10px 14px; border-radius: 10px;
-  background: rgba(0, 224, 248, .06); border: 1px solid rgba(0, 224, 248, .18);
-  font-size: 13px; color: var(--text); max-width: 66%;
-}
-@media (max-width: 720px) { .price-extras__seo-note { max-width: 100%; } }
 .price-extras__total {
+  display: inline-block; width: fit-content; max-width: 66%;
   margin-top: 14px; padding: 12px 14px; border-radius: 10px;
   background: linear-gradient(135deg, rgba(0, 224, 248,.08), rgba(181,0,255,.06));
   border: 1px solid rgba(0, 224, 248,.2);
@@ -713,7 +708,7 @@ a { color: inherit; text-decoration: none; }
   .price-extras__list { max-width: 100% !important; }
   .price-extras__list li { font-size: 13px; gap: 10px; }
   /* Итог "Под ключ с нуля" — диапазон в одну строку, перенос всей суммы */
-  .price-extras__total { display: block; }
+  .price-extras__total { display: inline-block; max-width: 100%; }
   .price-extras__total b { display: inline-block; white-space: nowrap; margin-top: 4px; }
 
   /* FAQ — компактнее */

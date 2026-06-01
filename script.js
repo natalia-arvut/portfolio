@@ -55,7 +55,6 @@ const services = {
       { h: 'Сроки и цена', items: [
         'Срок: 1-4 недели',
         'Стоимость: от 20 000 ₽',
-        'SEO-продвижение (ежемесячно) — отдельно, от 15 000 ₽/мес',
         'Оплата: 50% предоплата, 50% после согласования'
       ]}
     ]
@@ -79,7 +78,6 @@ const services = {
       { h: 'Сроки и цена', items: [
         'Лендинг — 1-2 недели, от 15 000 ₽',
         'Многостраничный сайт — 2-4 недели, от 30 000 ₽',
-        'SEO-продвижение (ежемесячно) — отдельно, от 15 000 ₽/мес',
         'Оплата: 50% предоплата, 50% после согласования'
       ]}
     ]
@@ -158,7 +156,6 @@ const servicesEN = {
       { h: 'Timing and price', items: [
         'Timing: 1-4 weeks',
         'Cost: from $250',
-        'SEO promotion (monthly) — separate, from $200/mo',
         'Payment: 50% upfront, 50% after approval'
       ]}
     ]
@@ -182,7 +179,6 @@ const servicesEN = {
       { h: 'Timing and price', items: [
         'Landing — 1-2 weeks, from $200',
         'Multi-page — 2-4 weeks, from $400',
-        'SEO promotion (monthly) — separate, from $200/mo',
         'Payment: 50% upfront, 50% after approval'
       ]}
     ]
