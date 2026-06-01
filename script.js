@@ -48,12 +48,14 @@ const services = {
         'Брендбук с правилами использования',
         'Дизайн сайта (лендинг или многостраничник)',
         'Реальная вёрстка + адаптив под все устройства',
+        'Базовая SEO-оптимизация (мета-теги, скорость, Schema, Open Graph, sitemap)',
         'Подключение форм, мессенджеров, аналитики',
         'Размещение на хостинге, подключение домена, финальная проверка'
       ]},
       { h: 'Сроки и цена', items: [
         'Срок: 1-4 недели',
         'Стоимость: от 20 000 ₽',
+        'SEO-продвижение (ежемесячно) — отдельно, от 15 000 ₽/мес',
         'Оплата: 50% предоплата, 50% после согласования'
       ]}
     ]
@@ -70,13 +72,14 @@ const services = {
         'Адаптивная вёрстка: мобильный, планшет, десктоп',
         'Оптимизация скорости (90+ PageSpeed)',
         'Подключение форм заявок и мессенджеров',
-        'SEO-разметка и Open Graph для соцсетей',
+        'Базовая SEO-оптимизация: мета-теги, Schema, Open Graph, sitemap',
         'Подключение Google / Яндекс аналитики',
         'Размещение на хостинге и подключение домена'
       ]},
       { h: 'Сроки и цена', items: [
         'Лендинг — 1-2 недели, от 15 000 ₽',
         'Многостраничный сайт — 2-4 недели, от 30 000 ₽',
+        'SEO-продвижение (ежемесячно) — отдельно, от 15 000 ₽/мес',
         'Оплата: 50% предоплата, 50% после согласования'
       ]}
     ]
@@ -148,12 +151,14 @@ const servicesEN = {
         'Brand guidelines with usage rules',
         'Website design (landing or multi-page)',
         'Real code + responsive for all devices',
+        'Basic SEO optimization (meta tags, speed, Schema, Open Graph, sitemap)',
         'Forms, messengers and analytics setup',
         'Hosting deployment, domain setup, final checks'
       ]},
       { h: 'Timing and price', items: [
         'Timing: 1-4 weeks',
         'Cost: from $250',
+        'SEO promotion (monthly) — separate, from $200/mo',
         'Payment: 50% upfront, 50% after approval'
       ]}
     ]
@@ -170,13 +175,14 @@ const servicesEN = {
         'Responsive code: mobile, tablet, desktop',
         'Speed optimization (90+ PageSpeed)',
         'Forms and messenger integration',
-        'SEO meta tags and Open Graph for social',
+        'Basic SEO optimization: meta tags, Schema, Open Graph, sitemap',
         'Google / Yandex Analytics setup',
-        'Hosting deployment'
+        'Hosting deployment and domain setup'
       ]},
       { h: 'Timing and price', items: [
         'Landing — 1-2 weeks, from $200',
         'Multi-page — 2-4 weeks, from $400',
+        'SEO promotion (monthly) — separate, from $200/mo',
         'Payment: 50% upfront, 50% after approval'
       ]}
     ]

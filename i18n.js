@@ -85,6 +85,11 @@ const T = {
     'p.brand-site.x2': '+ Многостраничник вместо лендинга',
     'p.brand-site.x3': '+ Доп. языковая версия сайта',
     'p.brand-site.x4': '+ Создание рекламного видео (или видео с аватаром)',
+    'p.seo.included': 'Базовая SEO-оптимизация входит в стоимость (мета-теги, скорость, Schema, Open Graph, sitemap).',
+    'p.seo.promo': '+ SEO-продвижение (ежемесячное сопровождение)',
+    'p.seo.promo.price': 'от 15 000 ₽/мес',
+    'p.seo.audit': '+ SEO-аудит сайта (разово)',
+    'p.seo.audit.price': 'от 7 000 ₽',
 
     'p.landing.h': 'Лендинг под ключ',
     'p.landing.p': 'Одностраничный сайт с дизайном и реальной вёрсткой.',
@@ -277,6 +282,11 @@ const T = {
     'p.brand-site.x2': '+ Multi-page instead of landing',
     'p.brand-site.x3': '+ Extra language version',
     'p.brand-site.x4': '+ Promo video (or video with avatar)',
+    'p.seo.included': 'Basic SEO optimization is included (meta tags, speed, Schema, Open Graph, sitemap).',
+    'p.seo.promo': '+ SEO promotion (monthly support)',
+    'p.seo.promo.price': 'from $200/mo',
+    'p.seo.audit': '+ SEO audit (one-time)',
+    'p.seo.audit.price': 'from $90',
 
     'p.landing.h': 'Landing page end-to-end',
     'p.landing.p': 'Single-page site with design and real code.',
