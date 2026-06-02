@@ -1,0 +1,250 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "Натали — N design" [ref=e6] [cursor=pointer]:
+          - /url: "#hero"
+          - img "Натали — N design" [ref=e7]
+        - generic "AI" [ref=e8]:
+          - generic [ref=e10]: in collaboration with AI
+      - generic [ref=e11]:
+        - navigation [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: "#services"
+          - link "Portfolio" [ref=e14] [cursor=pointer]:
+            - /url: "#work"
+          - link "Pricing" [ref=e15] [cursor=pointer]:
+            - /url: "#pricing"
+          - link "About me" [ref=e16] [cursor=pointer]:
+            - /url: "#about"
+          - link "FAQ" [ref=e17] [cursor=pointer]:
+            - /url: "#faq"
+        - button "EN" [ref=e19] [cursor=pointer]:
+          - generic [ref=e20]: EN
+          - img [ref=e21]
+        - link "Discuss a project" [ref=e23] [cursor=pointer]:
+          - /url: "#contact"
+  - generic [ref=e24]:
+    - img "Дизайн и разработка" [ref=e26]
+    - generic [ref=e27]:
+      - paragraph [ref=e28]: Graphic & web designer · developer · AI
+      - heading "Brands. Websites. Apps." [level=1] [ref=e29]:
+        - text: Brands.
+        - text: Websites.
+        - text: Apps.
+      - paragraph [ref=e30]: Turnkey projects, from idea to launch. Logo, brand identity, design and real development with AI. One person closes the full cycle.
+      - generic [ref=e31]:
+        - link "Discuss a project" [ref=e32] [cursor=pointer]:
+          - /url: "#contact"
+        - link "See work" [ref=e33] [cursor=pointer]:
+          - /url: "#work"
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: 30+
+          - generic [ref=e37]: websites
+        - generic [ref=e38]:
+          - generic [ref=e39]: 4+
+          - generic [ref=e40]: major projects
+        - generic [ref=e41]:
+          - generic [ref=e42]: "8"
+          - generic [ref=e43]: years in design
+        - generic [ref=e44]:
+          - generic [ref=e45]: 360°
+          - generic [ref=e46]: brand · design · code
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - heading "Services" [level=2] [ref=e49]
+      - paragraph [ref=e50]: Full cycle or a single stage — whatever suits you.
+    - generic [ref=e51]:
+      - article [ref=e52]:
+        - generic [ref=e53]: ✦
+        - heading "Brand + website, turnkey" [level=3] [ref=e54]
+        - paragraph [ref=e55]: Logo, brand identity and website as one package. A coherent image and a working, finished site.
+        - button "Read more →" [ref=e56] [cursor=pointer]
+      - article [ref=e57]:
+        - generic [ref=e58]: ▦
+        - heading "Websites, turnkey" [level=3] [ref=e59]
+        - paragraph [ref=e60]: "Landings and multi-page sites: design, copy, real coded layout and launch. Responsive and fast."
+        - button "Read more →" [ref=e61] [cursor=pointer]
+      - article [ref=e62]:
+        - generic [ref=e63]: ◈
+        - heading "App development" [level=3] [ref=e64]
+        - paragraph [ref=e65]: "Web apps and platforms: from prototype to a working product with a database."
+        - button "Read more →" [ref=e66] [cursor=pointer]
+      - article [ref=e67]:
+        - generic [ref=e68]: ⚙
+        - heading "Automation & AI" [level=3] [ref=e69]
+        - paragraph [ref=e70]: Bots, integrations, AI assistants, mailings. Routine off your shoulders with artificial intelligence.
+        - button "Read more →" [ref=e71] [cursor=pointer]
+  - generic [ref=e72]:
+    - generic [ref=e73]:
+      - heading "Portfolio" [level=2] [ref=e74]
+      - paragraph [ref=e75]: Whole brands from logo to launched product — each in its own style.
+    - generic [ref=e76]:
+      - article [ref=e77]:
+        - link "Arvut LiveBook website" [ref=e78] [cursor=pointer]:
+          - /url: https://livebook.ch
+        - generic [ref=e79]:
+          - generic [ref=e80]: Platform · digital business cards · paid communication
+          - heading "Arvut LiveBook" [level=3] [ref=e81]
+          - paragraph [ref=e82]: "Brand and product for a platform of digital business cards and paid communication: logo, landing page and the platform itself."
+          - list [ref=e83]:
+            - listitem [ref=e84]: Brand & logo
+            - listitem [ref=e85]: Landing
+            - listitem [ref=e86]: UX / UI design
+            - listitem [ref=e87]: Development
+            - listitem [ref=e88]: Launch
+          - link "Visit" [ref=e89] [cursor=pointer]:
+            - /url: https://livebook.ch
+      - article [ref=e90]:
+        - link "Selinùs Financial Consulting website" [ref=e91] [cursor=pointer]:
+          - /url: https://selinusfincon.ch
+        - generic [ref=e92]:
+          - generic [ref=e93]: Legal & financial consulting
+          - heading "Selinùs Financial Consulting" [level=3] [ref=e94]
+          - paragraph [ref=e95]: "Premium brand for a Swiss financial company: logo, identity, brand guidelines and a multi-page website."
+          - list [ref=e96]:
+            - listitem [ref=e97]: Logo & brand
+            - listitem [ref=e98]: Website design
+            - listitem [ref=e99]: Code
+            - listitem [ref=e100]: Promo video
+            - listitem "Multilingual website" [ref=e101]:
+              - img [ref=e102]
+          - link "Visit" [ref=e106] [cursor=pointer]:
+            - /url: https://selinusfincon.ch
+      - article [ref=e107]:
+        - link "Arvut Accounting website" [ref=e108] [cursor=pointer]:
+          - /url: https://arvut.ch
+        - generic [ref=e109]:
+          - generic [ref=e110]: Accounting · service
+          - heading "Arvut Accounting" [level=3] [ref=e111]
+          - paragraph [ref=e112]: "Brand identity and corporate website for an accounting firm: logo, graphics and a multi-page site."
+          - list [ref=e113]:
+            - listitem [ref=e114]: Logo & brand
+            - listitem [ref=e115]: Website design
+            - listitem [ref=e116]: Copy
+            - listitem [ref=e117]: Build
+            - listitem [ref=e118]: Video
+            - listitem "Multilingual website" [ref=e119]:
+              - img [ref=e120]
+          - link "Visit" [ref=e124] [cursor=pointer]:
+            - /url: https://arvut.ch
+      - article [ref=e125]:
+        - link "Universal Bank of Abundance website" [ref=e126] [cursor=pointer]:
+          - /url: https://vsebank.space
+        - generic [ref=e127]:
+          - generic [ref=e128]: App · simulator
+          - heading "Universal Bank of Abundance" [level=3] [ref=e129]
+          - paragraph [ref=e130]: "Design and development of a simulator app: brand, interface and a working web application from start to finish."
+          - list [ref=e131]:
+            - listitem [ref=e132]: Branding
+            - listitem [ref=e133]: UI design
+            - listitem [ref=e134]: UX design
+            - listitem [ref=e135]: Development
+            - listitem [ref=e136]: Launch
+          - link "Visit" [ref=e137] [cursor=pointer]:
+            - /url: https://vsebank.space
+  - generic [ref=e138]:
+    - generic [ref=e139]:
+      - heading "Pricing" [level=2] [ref=e140]
+      - paragraph [ref=e141]: Starting prices are the minimum. The final cost depends on scope and is agreed per task. The "from" price assumes you already have materials (copy, brief, idea, sketches). If I do everything from scratch — the cost is built from the add-ons below. I quote precisely after a short brief.
+    - generic [ref=e142]:
+      - generic [ref=e143] [cursor=pointer]:
+        - generic [ref=e144]:
+          - heading "Brand + website, turnkey" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Logo, brand identity and website as one package.
+          - group [ref=e147]:
+            - generic "How the price is built ↓" [ref=e148]
+        - generic [ref=e149]: from CHF 3 500
+      - generic [ref=e150] [cursor=pointer]:
+        - generic [ref=e151]:
+          - heading "Landing page, turnkey" [level=3] [ref=e152]
+          - paragraph [ref=e153]: A single-page site with real design and coded layout.
+          - group [ref=e154]:
+            - generic "How the price is built ↓" [ref=e155]
+        - generic [ref=e156]: from CHF 1 800
+      - generic [ref=e157] [cursor=pointer]:
+        - generic [ref=e158]:
+          - heading "Multi-page website" [level=3] [ref=e159]
+          - paragraph [ref=e160]: Corporate site with sections, a catalog or a blog.
+          - group [ref=e161]:
+            - generic "How the price is built ↓" [ref=e162]
+        - generic [ref=e163]: from CHF 5 000
+      - generic [ref=e164] [cursor=pointer]:
+        - generic [ref=e165]:
+          - heading "App development" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Web apps and platforms — from prototype to a live product.
+          - group [ref=e168]:
+            - generic "How the price is built ↓" [ref=e169]
+        - generic [ref=e170]: from CHF 8 000
+      - generic [ref=e171] [cursor=pointer]:
+        - generic [ref=e172]:
+          - heading "Automation & AI" [level=3] [ref=e173]
+          - paragraph [ref=e174]: Bots, AI assistants, mailings, integrations and avatar videos.
+          - group [ref=e175]:
+            - generic "How the price is built ↓" [ref=e176]
+        - generic [ref=e177]: from CHF 2 500
+  - generic [ref=e178]:
+    - heading "About me" [level=2] [ref=e179]
+    - generic [ref=e180]:
+      - img "Natalia Kovpinetc" [ref=e182]
+      - generic "Social profiles" [ref=e183]:
+        - link "Facebook" [ref=e184] [cursor=pointer]:
+          - /url: https://www.facebook.com/natalia.kovpinets.7/
+          - img [ref=e185]
+        - link "LinkedIn" [ref=e187] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/natalia-kovpinetc/
+          - img [ref=e188]
+    - generic [ref=e190]:
+      - paragraph [ref=e191]: "My name is Natalia Kovpinetc. I'm a neural designer and developer: I combine years of graphic design experience with modern AI tools. I don't just draw a pretty picture — I take the project all the way to a working site or app."
+      - paragraph [ref=e192]: "I actively use AI in my work: it speeds things up and strengthens the result. My background in marketing and psychology helps me build products that actually sell."
+      - list [ref=e193]:
+        - listitem [ref=e194]: "✦ Full cycle: brand → design → development → launch"
+        - listitem [ref=e195]: ✦ AI tools at every stage
+        - listitem [ref=e196]: ✦ Education at ZeroCoder online university
+      - generic [ref=e197]:
+        - button "Vibe Marketing" [ref=e198] [cursor=pointer]
+        - button "Perplexity" [ref=e199] [cursor=pointer]
+        - button "Neural Networks" [ref=e200] [cursor=pointer]
+      - generic [ref=e201]:
+        - link "Discuss a project" [ref=e202] [cursor=pointer]:
+          - /url: "#contact"
+        - button "Reviews" [ref=e203] [cursor=pointer]
+  - generic [ref=e204]:
+    - generic [ref=e205]:
+      - heading "FAQ" [level=2] [ref=e206]
+      - paragraph [ref=e207]: The most common questions before we start — if yours isn't here, just ask.
+    - generic [ref=e208]:
+      - group [ref=e209]:
+        - generic "What does \"turnkey\" include? +" [ref=e210] [cursor=pointer]
+      - group [ref=e211]:
+        - generic "How long does development take? +" [ref=e212] [cursor=pointer]
+      - group [ref=e213]:
+        - generic "How do we work with AI? +" [ref=e214] [cursor=pointer]
+      - group [ref=e215]:
+        - generic "Can I order design only, without development? +" [ref=e216] [cursor=pointer]
+      - group [ref=e217]:
+        - generic "How many revisions are included? +" [ref=e218] [cursor=pointer]
+      - group [ref=e219]:
+        - generic "How and when do I pay? +" [ref=e220] [cursor=pointer]
+      - group [ref=e221]:
+        - generic "What if I don't like the result? +" [ref=e222] [cursor=pointer]
+  - generic [ref=e224]:
+    - heading "Let's build your project together" [level=2] [ref=e225]
+    - paragraph [ref=e226]:
+      - text: Send the task description and any materials to
+      - link "nk@arvut.ch" [ref=e227] [cursor=pointer]:
+        - /url: mailto:nk@arvut.ch
+      - text: — or message me on any messenger. We'll arrange a call where you share the idea, and I'll explain how I can build it, with timing and cost.
+    - generic [ref=e228]:
+      - link "Email me" [ref=e229] [cursor=pointer]:
+        - /url: mailto:nk@arvut.ch
+      - link "WhatsApp" [ref=e230] [cursor=pointer]:
+        - /url: https://wa.me/41779076542?text=Feel%20free%20to%20message%20me%20%E2%80%94%20DE%20%2F%20FR%20%2F%20IT%20%2F%20EN.
+    - generic [ref=e231]:
+      - link "+41 77 907 65 42" [ref=e232] [cursor=pointer]:
+        - /url: tel:+41779076542
+      - generic [ref=e233]: Phone / WhatsApp / Telegram / GoChat / Viber / Imo / LiveBook / FaceTime
+  - contentinfo [ref=e234]:
+    - img "Натали" [ref=e235]
+    - paragraph [ref=e236]: © 2026 Natalia Kovpinetc · Design & development, turnkey · Lugano, Switzerland
