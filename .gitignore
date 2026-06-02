@@ -7,4 +7,5 @@ research/
 portfolio-ch/
 .playwright-mcp/
 ch-*.png
+audit-*.png
 *.png.tmp
