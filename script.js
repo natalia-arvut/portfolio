@@ -295,6 +295,21 @@ modal.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) { modal.hidden = true; document.body.style.overflow = ''; } });
 
+// Клик в любое место строки цены раскрывает «Как формируется цена»
+document.querySelectorAll('.price-row').forEach(row => {
+  row.addEventListener('click', (e) => {
+    const det = row.querySelector('details.price-extras');
+    if (!det) return;
+    // Если клик пришёлся на summary — пусть браузер сам делает toggle
+    if (e.target.closest('summary')) return;
+    // Внутри уже раскрытого блока надстроек — не сворачивать (чтобы можно было читать)
+    if (det.open && e.target.closest('details.price-extras')) return;
+    // Не перехватываем клики по ссылкам/кнопкам внутри строки
+    if (e.target.closest('a, button')) return;
+    det.open = !det.open;
+  });
+});
+
 // При смене языка — подменяем источники сертификатов (RU = -ru, EN = базовая версия)
 function applyCertLang() {
   const lang = (window.i18nLang && window.i18nLang()) || 'ru';
