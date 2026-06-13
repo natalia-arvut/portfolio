@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0f1918;--ink-2:#0a1211;--teal:#1c4a47;--teal-2:#27605c;
+  --ink:#173d34;--ink-2:#0f2a24;--teal:#1f5048;--teal-2:#28665b;
   --gold:#b3905e;--gold-2:#d3b483;--gold-ink:#92702f;
   --ivory:#f7f3ec;--ivory-2:#efe8da;--paper:#fff;
   --text:#27241d;--muted:#5a5346;--line:#e2dccd;--line-d:rgba(255,255,255,.16);
@@ -22,7 +22,7 @@ body{font-family:'Montserrat',system-ui,sans-serif;color:var(--text);background:
 h1,h2,h3,h4{font-family:'Cinzel',Georgia,serif;font-weight:600;line-height:1.2;letter-spacing:.01em;color:var(--ink)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+.wrap{max-width:1300px;margin:0 auto;padding:0 40px}
 .ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .ic-lg{width:28px;height:28px}
 .eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-ink);display:inline-flex;align-items:center;gap:14px}
@@ -100,7 +100,7 @@ section{padding:88px 0}
 /* problem/solution */
 .ps{background:var(--ivory-2)}
 .ps .cols{display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow)}
-.ps .card{padding:50px 46px}
+.ps .card{padding:44px 42px}
 .ps .prob{background:var(--paper)}
 .ps .sol{background:var(--ink);color:#e6ece9}
 .ps .card h3{font-family:'Cinzel',serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:30px;color:var(--gold)}
@@ -148,7 +148,7 @@ section{padding:88px 0}
 .ptable .hr>div{padding:22px 26px;font-family:'Cinzel',serif;letter-spacing:.04em}
 .ptable .hr .c0{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;display:flex;align-items:center}
 .ptable .hr .c1{background:#faf7f1;text-align:center;font-size:15px;color:var(--muted)}
-.ptable .hr .c2{background:var(--ink);color:#fff;text-align:center;font-size:17px}
+.ptable .hr .c2{background:#eef4f0;color:var(--teal);text-align:center;font-size:17px;border-top:3px solid var(--gold)}
 .ptable .rw{border-top:1px solid var(--line)}
 .ptable .rw>div{padding:18px 26px;display:flex;align-items:center;gap:10px;font-size:15px}
 .ptable .rw .f{font-family:'Cinzel',serif;font-weight:600;color:var(--ink)}
@@ -159,7 +159,7 @@ section{padding:88px 0}
 /* get started */
 .start{background:var(--ink);color:#fff}
 .start .grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.start .txt{padding:90px 56px}
+.start .txt{padding:74px 52px}
 .start .eyebrow{color:var(--gold-2)}.start .eyebrow::after{background:var(--gold-2)}
 .start h2{color:#fff;font-size:clamp(24px,2.8vw,33px);margin:18px 0 18px}
 .start p{color:#c4cfc9;font-size:17px;font-weight:300;margin-bottom:32px;max-width:480px;line-height:1.7}
@@ -300,11 +300,17 @@ footer .lic{border:1px solid var(--line-d);padding:12px 16px;display:inline-bloc
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="#">
-    <svg class="mk" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="28" cy="28" r="27" stroke="#b3905e" stroke-width="1.5"/>
-      <path d="M16 27 L28 17 L40 27" stroke="#d3b483" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M15 33c3 0 3-2.2 6-2.2S24 33 27 33s3-2.2 6-2.2S36 33 39 33" stroke="#d3b483" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      <path d="M15 38c3 0 3-2.2 6-2.2S24 38 27 38s3-2.2 6-2.2S36 38 39 38" stroke="#b3905e" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/>
+    <svg class="mk" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#cda878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 6 L94 50 L50 94 L6 50 Z"/>
+      <circle cx="38" cy="33" r="9"/>
+      <path d="M59 22 L90 50"/>
+      <rect x="62" y="49" width="6" height="6" stroke-width="2.4"/>
+      <rect x="72" y="49" width="6" height="6" stroke-width="2.4"/>
+      <rect x="62" y="58" width="6" height="6" stroke-width="2.4"/>
+      <rect x="72" y="58" width="6" height="6" stroke-width="2.4"/>
+      <path d="M13 63 Q33 54 52 63 T88 64"/>
+      <path d="M16 74 Q35 65 53 74 T86 74"/>
+      <path d="M24 85 Q40 77 56 84 T80 84"/>
     </svg>
     <span class="nm">White River Group</span>
   </a>
@@ -342,7 +348,6 @@ footer .lic{border:1px solid var(--line-d);padding:12px 16px;display:inline-bloc
 <section class="hero">
   <img class="bg" src="img/hero-a-lux.jpg" alt="Accessory dwelling unit built by White River Group in Sacramento">
   <div class="wrap">
-    <span class="eyebrow">Greater Sacramento · CA GC #848613</span>
     <h1>Sacramento's ADU &amp; Tiny Home Builder<span class="ln2">More space, less stress.</span></h1>
     <div class="divider"></div>
     <p class="lead">Get clear pricing, zoning guidance, and a step-by-step plan — we design, permit and build your accessory dwelling unit from first call to keys in hand.</p>
@@ -407,13 +412,6 @@ footer .lic{border:1px solid var(--line-d);padding:12px 16px;display:inline-bloc
   </div>
 </div></section>
 
-<!-- TESTIMONIAL -->
-<section class="quote"><div class="wrap reveal">
-  <div class="mark">&ldquo;</div>
-  <blockquote>White River Group handled everything — design, permits, the entire build. We added a two-bedroom ADU for my parents and the process was genuinely stress-free.</blockquote>
-  <div class="by">Rochelle M.<span>Roseville, California</span></div>
-</div></section>
-
 <!-- PROCESS -->
 <section id="process" class="proc"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow c">How It Works</span><h2>A clear, step-by-step process</h2><p>One team, one process, one move-in-ready ADU — from your first call to the day we hand over the keys.</p></div>
@@ -428,13 +426,7 @@ footer .lic{border:1px solid var(--line-d);padding:12px 16px;display:inline-bloc
 
 <!-- PRICING -->
 <section id="cmp" class="cmp"><div class="wrap">
-  <div class="sec-head reveal"><span class="eyebrow c">Affordable ADUs</span><h2>Transparent, all-inclusive pricing</h2><p>These are our actual price ranges — not broad industry averages. Final cost depends on square footage, finishes and design.</p></div>
-  <div class="pricegrid reveal">
-    <div class="pcard"><div class="t">Studio</div><div class="p"><small>From</small>$75,000</div></div>
-    <div class="pcard"><div class="t">One-Bedroom</div><div class="p"><small>From</small>$110,000</div></div>
-    <div class="pcard"><div class="t">Two-Bedroom</div><div class="p"><small>From</small>$155,000</div></div>
-    <div class="pcard"><div class="t">Three-Bedroom</div><div class="p"><small>From</small>$200,000</div></div>
-  </div>
+  <div class="sec-head reveal"><span class="eyebrow c">Affordable ADUs</span><h2>What's really included in your quote</h2><p>Many builders advertise a low base price, then add the essentials mid-project. We include them from day one.</p></div>
   <div class="ptable reveal">
     <div class="hr"><div class="c0">The Essentials</div><div class="c1">Typical Builders</div><div class="c2">White River Group</div></div>
     <div class="rw"><div class="f">Site Permits &amp; Zoning</div><div class="v1"><svg class="ic" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Often not included</div><div class="v2"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Included</div></div>
@@ -474,7 +466,7 @@ footer .lic{border:1px solid var(--line-d);padding:12px 16px;display:inline-bloc
 <section id="models" class="models"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow c">Many Choices · ADU Models</span><h2>A model for every backyard</h2><p>A wide range of models combining comfort, function and timeless value — every design is permit-ready and fully customizable to your lot.</p></div>
   <div class="models-grid" id="mgrid"></div>
-  <div class="center-cta reveal"><a href="#contact" class="btn btn-dark">See All Models <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  <div class="center-cta reveal"><a href="#contact" class="btn">See All Models <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
 </div></section>
 
 <!-- SERVICES -->
