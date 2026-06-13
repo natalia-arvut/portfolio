@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>White River Group Inc. — Sacramento ADU & Tiny Home Builder</title>
+<meta name="description" content="White River Group Inc. designs and builds accessory dwelling units (ADUs) across Greater Sacramento. Licensed California General Contractor #848613. Financing available through RenoFi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --river:#13344b;        /* deep river slate-blue */
+  --river-2:#0c2435;
+  --ink:#10222f;
+  --teal:#2a8f9e;         /* water accent */
+  --teal-d:#1f6f7c;
+  --sand:#f6f1e8;         /* warm cream bg */
+  --sand-2:#efe7d8;
+  --wood:#c69a6b;         /* warm wood accent */
+  --line:#e3dccd;
+  --white:#ffffff;
+  --muted:#5d6b73;
+  --radius:18px;
+  --shadow:0 18px 50px -20px rgba(16,34,47,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.1;font-weight:600;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#fff;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s;border:none;cursor:pointer}
+.btn:hover{background:var(--teal-d);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--river);border:1.5px solid var(--line)}
+.btn-ghost:hover{background:#fff;border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px)}
+.eyebrow{font-family:'Inter';font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d)}
+
+/* demo ribbon */
+.demo-ribbon{background:var(--ink);color:#cdd8de;text-align:center;font-size:12.5px;letter-spacing:.04em;padding:7px 16px}
+.demo-ribbon b{color:#fff}
+
+/* top bar */
+.topbar{background:var(--river);color:#dbe6ec;font-size:13.5px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 24px;flex-wrap:wrap;gap:8px}
+.topbar a{font-weight:500;color:#fff}
+.topbar .tb-r{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(246,241,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{width:42px;height:42px;flex:none}
+.brand .name{font-family:'Fraunces';font-weight:600;font-size:20px;color:var(--river);line-height:1.05}
+.brand .name small{display:block;font-family:'Inter';font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--teal-d);text-transform:uppercase}
+.menu{display:flex;gap:26px;align-items:center;font-weight:500;font-size:15px}
+.menu a{color:var(--ink);opacity:.85;transition:.15s}
+.menu a:hover{opacity:1;color:var(--teal-d)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.burger{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:70px 24px 80px}
+.hero h1{font-size:clamp(36px,5vw,60px);color:var(--river);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--teal-d)}
+.hero p.lead{font-size:19px;color:var(--muted);margin:22px 0 30px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap}
+.hero-stats .s b{font-family:'Fraunces';font-size:30px;color:var(--river);display:block;font-weight:600}
+.hero-stats .s span{font-size:13px;color:var(--muted)}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero-badge{position:absolute;bottom:18px;left:18px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px;font-size:13px;font-weight:600}
+.hero-badge .dot{width:34px;height:34px;border-radius:9px;background:var(--sand-2);display:grid;place-items:center;color:var(--teal-d)}
+
+/* trust strip */
+.trust{background:var(--river);color:#e7eef2}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:28px 24px;text-align:center}
+.trust .t b{font-family:'Fraunces';font-size:22px;color:#fff;display:block}
+.trust .t span{font-size:13px;color:#a9bdc8;letter-spacing:.02em}
+.trust .t{border-right:1px solid rgba(255,255,255,.12)}
+.trust .t:last-child{border:none}
+
+/* sections */
+section{padding:78px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 46px}
+.sec-head h2{font-size:clamp(28px,3.6vw,42px);color:var(--river);margin:12px 0 10px}
+.sec-head p{color:var(--muted);font-size:17px}
+
+/* models */
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:.2s}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.mcard .ph{aspect-ratio:4/3;position:relative;display:grid;place-items:center}
+.mcard .ph svg{width:62%;height:auto;opacity:.92}
+.mcard .badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--river);font-weight:600;font-size:12px;padding:5px 11px;border-radius:999px}
+.mcard .body{padding:20px 22px 24px}
+.mcard h3{font-size:21px;color:var(--river);margin-bottom:4px}
+.mcard .type{font-size:13px;color:var(--teal-d);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.mspecs{display:flex;gap:18px;margin:14px 0 16px;font-size:14px;color:var(--muted)}
+.mspecs b{color:var(--ink);font-weight:600}
+.mcard a.more{font-weight:600;color:var(--teal-d);font-size:14.5px}
+.center-cta{text-align:center;margin-top:44px}
+
+/* service area */
+.area{background:var(--sand-2)}
+.area .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:54px;align-items:center}
+.cities{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 14px;font-weight:500;font-size:14.5px;display:flex;align-items:center;gap:9px}
+.chip svg{flex:none;color:var(--teal)}
+.area .map{aspect-ratio:1/1;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.area .map svg{width:100%;height:100%;display:block}
+
+/* financing */
+.fin{background:linear-gradient(135deg,var(--river),#0c2435);color:#fff;text-align:center;border-radius:0}
+.fin .wrap{max-width:760px}
+.fin h2{color:#fff;font-size:clamp(28px,3.6vw,40px)}
+.fin p{color:#bcd0db;font-size:18px;margin:16px 0 26px}
+.renofi{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:14px 24px;border-radius:14px;font-weight:600;font-size:18px;letter-spacing:.02em}
+.renofi b{color:#7fe3d4}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px}
+.step .n{width:44px;height:44px;border-radius:12px;background:var(--sand-2);color:var(--teal-d);font-family:'Fraunces';font-size:21px;font-weight:600;display:grid;place-items:center;margin-bottom:16px}
+.step h3{font-size:19px;color:var(--river);margin-bottom:7px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* testimonial */
+.quote{background:var(--sand-2)}
+.quote .wrap{max-width:820px;text-align:center}
+.quote blockquote{font-family:'Fraunces';font-size:clamp(22px,2.8vw,30px);color:var(--river);line-height:1.4;font-weight:500}
+.quote .by{margin-top:22px;font-weight:600;color:var(--teal-d)}
+.quote .by span{display:block;font-weight:400;color:var(--muted);font-size:14px}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:start}
+.contact h2{font-size:clamp(28px,3.6vw,40px);color:var(--river)}
+.contact .lead{color:var(--muted);font-size:17px;margin:14px 0 26px}
+.cinfo{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.cinfo .row{display:flex;gap:14px;align-items:center;font-size:15.5px}
+.cinfo .ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--sand-2);display:grid;place-items:center;color:var(--teal-d)}
+.cinfo .row b{display:block;color:var(--river)}
+.cinfo .row span{color:var(--muted);font-size:14px}
+form.cform{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+form.cform .fr{margin-bottom:16px}
+form.cform label{display:block;font-size:13px;font-weight:600;color:var(--river);margin-bottom:6px}
+form.cform input,form.cform select,form.cform textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;font-family:inherit;font-size:15px;background:var(--sand);color:var(--ink)}
+form.cform input:focus,form.cform select:focus,form.cform textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+form.cform .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form.cform .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* footer */
+footer{background:var(--ink);color:#aebcc4;padding:60px 0 30px;font-size:14.5px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h4{font-family:'Inter';font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+footer a{display:block;color:#aebcc4;margin-bottom:9px;transition:.15s}
+footer a:hover{color:#fff}
+footer .fbrand .name{font-family:'Fraunces';font-size:21px;color:#fff;margin:12px 0 10px}
+footer .lic{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;display:inline-block;font-size:13px;color:#cdd8de;margin-top:6px}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:13px;color:#7e8e97}
+
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:36px;padding:48px 24px 56px}
+  .hero-art{order:-1}
+  .trust .wrap{grid-template-columns:1fr 1fr;gap:24px}
+  .trust .t:nth-child(2){border:none}
+  .models-grid{grid-template-columns:1fr 1fr}
+  .area .grid,.contact .grid{grid-template-columns:1fr;gap:34px}
+  .steps{grid-template-columns:1fr 1fr}
+  footer .grid{grid-template-columns:1fr 1fr}
+  .menu{display:none}
+}
+@media(max-width:560px){
+  .models-grid,.steps,.cities{grid-template-columns:1fr 1fr}
+  .topbar .tb-r{gap:14px}
+  form.cform .two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon">Concept demo prepared for <b>White River Group Inc.</b> &nbsp;·&nbsp; design &amp; build by <b>N&nbsp;design</b> — sample layout, not the final site</div>
+
+<div class="topbar"><div class="wrap">
+  <div>California General Contractor License <b>#848613</b></div>
+  <div class="tb-r">
+    <a href="tel:+19166559555">📞 (916) 655-9555</a>
+    <span>Serving Greater Sacramento</span>
+  </div>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#">
+    <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="48" height="48" rx="11" fill="#13344b"/>
+      <path d="M24 9l13 9v4H11v-4l13-9z" fill="#2a8f9e"/>
+      <rect x="15" y="22" width="18" height="13" fill="#fff"/>
+      <path d="M9 38c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2" stroke="#2a8f9e" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="name">White River Group<small>ADU &amp; Tiny Home Builder</small></span>
+  </a>
+  <nav class="menu">
+    <a href="#models">Models</a>
+    <a href="#area">Service Area</a>
+    <a href="#financing">Financing</a>
+    <a href="#process">How It Works</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="#contact" class="btn">Free Consultation</a>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Greater Sacramento · Licensed &amp; Insured</span>
+    <h1>More space.<br><em>Less stress.</em><br>Built in your backyard.</h1>
+    <p class="lead">White River Group designs, permits and builds accessory dwelling units across the Sacramento region — turnkey, all-inclusive, no surprises. From design to keys in hand.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn">Get Your Free Estimate</a>
+      <a href="#models" class="btn btn-ghost">Explore ADU Models</a>
+    </div>
+    <div class="hero-stats">
+      <div class="s"><b>30+</b><span>ADUs delivered</span></div>
+      <div class="s"><b>15</b><span>cities served</span></div>
+      <div class="s"><b>100%</b><span>permits handled</span></div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Modern ADU illustration">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#bfe3ea"/><stop offset="1" stop-color="#eaf4f3"/>
+        </linearGradient>
+        <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d8ad7c"/><stop offset="1" stop-color="#c69a6b"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="460" fill="url(#sky)"/>
+      <circle cx="492" cy="86" r="40" fill="#fff" opacity=".7"/>
+      <!-- ground -->
+      <rect y="360" width="600" height="100" fill="#e6dcc6"/>
+      <ellipse cx="300" cy="372" rx="300" ry="20" fill="#dcd0b6"/>
+      <!-- trees -->
+      <g fill="#2f6f5e"><circle cx="70" cy="300" r="34"/><rect x="66" y="318" width="8" height="44" fill="#7d6243"/></g>
+      <g fill="#357a66"><circle cx="540" cy="312" r="28"/><rect x="536" y="326" width="7" height="38" fill="#7d6243"/></g>
+      <!-- house body -->
+      <rect x="150" y="200" width="300" height="162" fill="#ffffff"/>
+      <rect x="150" y="200" width="300" height="162" fill="none" stroke="#e3dccd" stroke-width="2"/>
+      <!-- wood accent wing -->
+      <rect x="150" y="200" width="92" height="162" fill="url(#wood)"/>
+      <!-- roof -->
+      <path d="M132 200 L300 132 L468 200 Z" fill="#13344b"/>
+      <rect x="132" y="198" width="336" height="10" fill="#0c2435"/>
+      <!-- big window -->
+      <rect x="262" y="230" width="150" height="100" fill="#bfe3ea"/>
+      <rect x="262" y="230" width="150" height="100" fill="none" stroke="#13344b" stroke-width="3"/>
+      <line x1="312" y1="230" x2="312" y2="330" stroke="#13344b" stroke-width="3"/>
+      <line x1="362" y1="230" x2="362" y2="330" stroke="#13344b" stroke-width="3"/>
+      <line x1="262" y1="280" x2="412" y2="280" stroke="#13344b" stroke-width="3"/>
+      <!-- door -->
+      <rect x="178" y="262" width="42" height="100" fill="#13344b"/>
+      <circle cx="212" cy="312" r="3" fill="#7fe3d4"/>
+      <!-- porch step -->
+      <rect x="168" y="358" width="64" height="8" fill="#c69a6b"/>
+      <!-- planter -->
+      <rect x="430" y="338" width="26" height="24" fill="#2a8f9e"/>
+      <circle cx="437" cy="334" r="8" fill="#357a66"/><circle cx="449" cy="336" r="7" fill="#2f6f5e"/>
+    </svg>
+    <div class="hero-badge"><div class="dot">★</div><div>Licensed CA GC<br>#848613</div></div>
+  </div>
+</div></section>
+
+<!-- TRUST -->
+<div class="trust"><div class="wrap">
+  <div class="t"><b>Licensed &amp; Insured</b><span>CA GC #848613</span></div>
+  <div class="t"><b>Turnkey Build</b><span>Design · Permits · Construction</span></div>
+  <div class="t"><b>RenoFi Financing</b><span>Flexible options available</span></div>
+  <div class="t"><b>Local to Sacramento</b><span>15 cities &amp; surrounding areas</span></div>
+</div></div>
+
+<!-- MODELS -->
+<section id="models"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Our ADU Models</span>
+    <h2>Floor plans for every backyard</h2>
+    <p>From compact studios to spacious three-bedroom homes — every model is permit-ready and fully customizable to your lot.</p>
+  </div>
+  <div class="models-grid" id="mgrid"></div>
+  <div class="center-cta"><a href="#contact" class="btn btn-ghost">View All 20+ Models →</a></div>
+</div></section>
+
+<!-- SERVICE AREA -->
+<section id="area" class="area"><div class="wrap">
+  <div class="grid">
+    <div>
+      <span class="eyebrow">Where We Build</span>
+      <h2 style="font-size:clamp(28px,3.4vw,38px);color:var(--river);margin:12px 0 14px">Proudly serving Greater Sacramento</h2>
+      <p style="color:var(--muted);font-size:17px;margin-bottom:8px">We build throughout Sacramento and surrounding communities within roughly 25 miles of the city.</p>
+      <div class="map">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Sacramento service area map">
+          <rect width="400" height="400" fill="#dbeef0"/>
+          <path d="M0 250 Q90 230 150 270 T300 250 T400 280 V400 H0 Z" fill="#cbe6e2" opacity=".7"/>
+          <path d="M120 0 Q140 120 100 220 T150 400" stroke="#9cc7cf" stroke-width="14" fill="none" opacity=".6"/>
+          <path d="M260 0 Q240 140 300 240 T280 400" stroke="#9cc7cf" stroke-width="11" fill="none" opacity=".5"/>
+          <circle cx="200" cy="210" r="118" fill="#2a8f9e" opacity=".12"/>
+          <circle cx="200" cy="210" r="118" fill="none" stroke="#2a8f9e" stroke-width="2" stroke-dasharray="6 7"/>
+          <g fill="#13344b">
+            <circle cx="200" cy="210" r="9"/>
+          </g>
+          <text x="200" y="238" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#13344b">Sacramento</text>
+          <g fill="#2a8f9e">
+            <circle cx="262" cy="150" r="5"/><circle cx="300" cy="186" r="5"/><circle cx="156" cy="138" r="5"/>
+            <circle cx="132" cy="262" r="5"/><circle cx="252" cy="284" r="5"/><circle cx="296" cy="252" r="5"/>
+            <circle cx="120" cy="196" r="5"/><circle cx="222" cy="120" r="5"/>
+          </g>
+          <text x="200" y="372" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#5d6b73">~25 mile service radius</text>
+        </svg>
+      </div>
+    </div>
+    <div class="cities" id="cities"></div>
+  </div>
+</div></section>
+
+<!-- FINANCING -->
+<section id="financing" class="fin"><div class="wrap">
+  <span class="eyebrow" style="color:#7fe3d4">Financing</span>
+  <h2>Build now, pay over time</h2>
+  <p>An ADU is one of the smartest investments you can make in your property — and you don't have to pay for it all upfront.</p>
+  <div class="renofi">Financing Available Through <b>RenoFi</b></div>
+</div></section>
+
+<!-- PROCESS -->
+<section id="process"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">How It Works</span>
+    <h2>From idea to move-in, handled</h2>
+    <p>One team, one point of contact, zero permit headaches.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Free Consultation</h3><p>We review your lot, goals and budget, then recommend the right model and layout.</p></div>
+    <div class="step"><div class="n">2</div><h3>Design &amp; Permits</h3><p>Custom plans plus full permitting — we handle the city, utilities and inspections.</p></div>
+    <div class="step"><div class="n">3</div><h3>Construction</h3><p>Site-built quality with a clear timeline and transparent, all-inclusive pricing.</p></div>
+    <div class="step"><div class="n">4</div><h3>Move In</h3><p>Final walkthrough, warranty and keys. Your new ADU is ready for family or rental income.</p></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIAL -->
+<section class="quote"><div class="wrap">
+  <span class="eyebrow">What Homeowners Say</span>
+  <blockquote>"White River Group handled everything — design, permits, the whole build. We added a two-bedroom ADU for my parents and the process was genuinely stress-free."</blockquote>
+  <div class="by">Rochelle M.<span>Roseville, CA</span></div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact"><div class="wrap">
+  <div class="grid">
+    <div>
+      <span class="eyebrow">Get Started</span>
+      <h2>Request your free estimate</h2>
+      <p class="lead">Tell us about your project and we'll get back to you within one business day.</p>
+      <div class="cinfo">
+        <div class="row"><div class="ic">📞</div><div><b>(916) 655-9555</b><span>Mon–Sat, 8am–6pm PT</span></div></div>
+        <div class="row"><div class="ic">🌐</div><div><b>whiterivergroups.com</b><span>Greater Sacramento, California</span></div></div>
+        <div class="row"><div class="ic">★</div><div><b>License #848613</b><span>California General Contractor</span></div></div>
+      </div>
+    </div>
+    <form class="cform" onsubmit="return false">
+      <div class="two">
+        <div class="fr"><label>Full name</label><input type="text" placeholder="Your name"></div>
+        <div class="fr"><label>Phone</label><input type="tel" placeholder="(916) 000-0000"></div>
+      </div>
+      <div class="fr"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fr"><label>Your city</label>
+        <select id="citysel"><option value="">Select your city</option></select>
+      </div>
+      <div class="fr"><label>Tell us about your project</label><textarea rows="3" placeholder="What kind of ADU are you considering?"></textarea></div>
+      <button class="btn">Request Free Estimate</button>
+      <p class="form-note">Submissions are delivered straight to White River Group's inbox.</p>
+    </form>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="grid">
+    <div class="fbrand">
+      <svg class="logo" width="42" height="42" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="11" fill="#1c4a63"/><path d="M24 9l13 9v4H11v-4l13-9z" fill="#2a8f9e"/><rect x="15" y="22" width="18" height="13" fill="#fff"/><path d="M9 38c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2" stroke="#2a8f9e" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      <div class="name">White River Group Inc.</div>
+      <p style="max-width:280px">Designing and building quality accessory dwelling units across the Sacramento region.</p>
+      <div class="lic">CA General Contractor License #848613</div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#models">ADU Models</a><a href="#area">Service Area</a><a href="#financing">Financing</a><a href="#process">How It Works</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#about">About Us</a><a href="#">Gallery</a><a href="#">FAQ</a><a href="#">Blog</a><a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+19166559555">(916) 655-9555</a>
+      <a href="https://whiterivergroups.com">whiterivergroups.com</a>
+      <a href="#">Greater Sacramento, CA</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 White River Group Inc. All rights reserved.</span>
+    <span>Financing available through RenoFi.</span>
+  </div>
+</div></footer>
+
+<script>
+// ADU models (A/B/C/D series, matching source site structure)
+const models=[
+  {n:'A-300',type:'Studio',sqft:300,bd:0,ba:1},
+  {n:'B-450',type:'1 Bedroom',sqft:450,bd:1,ba:1},
+  {n:'B-557',type:'1 Bedroom',sqft:557,bd:1,ba:1},
+  {n:'C-757',type:'2 Bedroom',sqft:757,bd:2,ba:2},
+  {n:'C-895',type:'2 Bedroom',sqft:895,bd:2,ba:2},
+  {n:'D-1125',type:'3 Bedroom',sqft:1125,bd:3,ba:2},
+];
+const houseSVG=`<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><path d="M30 70 L100 30 L170 70 Z" fill="#13344b"/><rect x="48" y="68" width="104" height="62" fill="#fff" stroke="#e3dccd"/><rect x="48" y="68" width="30" height="62" fill="#c69a6b"/><rect x="92" y="82" width="44" height="34" fill="#bfe3ea" stroke="#13344b" stroke-width="2"/><rect x="58" y="92" width="14" height="38" fill="#13344b"/></svg>`;
+const phbg=['#eaf2f3','#f1ece1','#e9f0ef','#f3ede2','#eaf2f3','#f1ece1'];
+document.getElementById('mgrid').innerHTML=models.map((m,i)=>`
+  <div class="mcard">
+    <div class="ph" style="background:${phbg[i]}">
+      <span class="badge">${m.sqft} sq ft</span>${houseSVG}
+    </div>
+    <div class="body">
+      <span class="type">${m.type}</span>
+      <h3>The ${m.n}</h3>
+      <div class="mspecs">
+        <span><b>${m.sqft}</b> sq ft</span>
+        <span><b>${m.bd||'Studio'}</b>${m.bd?' bed':''}</span>
+        <span><b>${m.ba}</b> bath</span>
+      </div>
+      <a class="more" href="#contact">View floor plan →</a>
+    </div>
+  </div>`).join('');
+
+// Service cities — within ~25 mi of Sacramento
+const cities=['Sacramento','Roseville','Folsom','Rocklin','Granite Bay','El Dorado Hills','Rancho Cordova','Carmichael','Fair Oaks','Citrus Heights','Orangevale','Antelope','Loomis','Lincoln','West Sacramento'];
+const pin=`<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.4" fill="#fff"/></svg>`;
+document.getElementById('cities').innerHTML=cities.map(c=>`<div class="chip">${pin}${c}</div>`).join('');
+document.getElementById('citysel').innerHTML+=cities.map(c=>`<option>${c}</option>`).join('');
+</script>
+</body>
+</html>
