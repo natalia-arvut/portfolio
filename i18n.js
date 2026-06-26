@@ -3,6 +3,18 @@ const T = {
   ru: {
     /* meta */
     'meta.title': 'Дизайн и разработка под ключ',
+    'work.more': 'Все работы',
+    'wg.title': 'Все работы',
+    'wg.lead': 'Бренды, сайты и концепты — полный цикл, от идеи до запуска.',
+    'wg.back': '← На главную',
+    'wg.visit': 'Сайт',
+    'wg.t.brandweb': 'Бренд и сайт',
+    'wg.t.web': 'Сайт',
+    'wg.t.app': 'Бренд · веб · приложение',
+    'wg.t.ecom': 'E-commerce',
+    'wg.t.portfolio': 'Портфолио',
+    'wg.t.platform': 'Платформа',
+    'wg.t.landing': 'Лендинг',
     'meta.desc': 'Нейродизайнер и разработчик. Бренды, сайты и приложения под ключ с использованием AI — от идеи до запуска.',
 
     /* nav */
@@ -205,6 +217,18 @@ const T = {
 
   en: {
     'meta.title': 'Design & development end-to-end',
+    'work.more': 'View all work',
+    'wg.title': 'All work',
+    'wg.lead': 'Brands, websites and concepts — full-cycle, from idea to launch.',
+    'wg.back': '← Back to home',
+    'wg.visit': 'Website',
+    'wg.t.brandweb': 'Brand & Website',
+    'wg.t.web': 'Website',
+    'wg.t.app': 'Brand · Web · App',
+    'wg.t.ecom': 'E-commerce',
+    'wg.t.portfolio': 'Portfolio',
+    'wg.t.platform': 'Platform',
+    'wg.t.landing': 'Landing page',
     'meta.desc': 'Neural designer and developer. Brands, websites and apps end-to-end with AI — from idea to launch.',
 
     'ai.badge': 'in collaboration with <b>AI</b>',
