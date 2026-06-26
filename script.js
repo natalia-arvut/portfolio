@@ -383,15 +383,42 @@ function loadLocal() {
 }
 function saveLocal(arr) { localStorage.setItem('nataly_reviews', JSON.stringify(arr)); }
 
-async function fetchAllReviews() {
-  if (supa) {
-    const { data, error } = await supa
-      .from('reviews')
-      .select('name, role, text, rating, language, created_at')
-      .order('created_at', { ascending: false });
-    if (!error && data) return data.map(r => ({ ...r, date: r.created_at }));
+// Встроенные отзывы реальных клиентов (показываются всегда, без базы)
+const SEED_REVIEWS = [
+  {
+    name: 'Giuseppe Li Causi',
+    role: 'CEO, Seilinus',
+    rating: 5,
+    language: 'it',
+    text: 'Natalia ha dato un’anima al nostro brand e ha realizzato per noi un sito web multipagina e multilingue di altissimo livello. Ha tradotto la visione di Seilinus in un’identità elegante e coerente — logo, presentazione e un sito curato in ogni dettaglio, veloce e impeccabile in ogni lingua. Ha capito subito cosa cercavamo ed è andata ben oltre le aspettative. Professionale, precisa e creativa: lavorare con lei è stato un piacere. La consiglio senza riserve.',
+    created_at: '2026-05-28T10:00:00.000Z'
+  },
+  {
+    name: 'Vsevolod Genzel',
+    role: 'Gründer, vsebank.space',
+    rating: 5,
+    language: 'de',
+    text: 'Natalia hat für unser Projekt vsebank.space hervorragende Arbeit geleistet. Das Design ist modern, klar und wirkt absolut hochwertig — genau das, was eine Finanzplattform braucht, um Vertrauen zu schaffen. Sie denkt mit, arbeitet schnell und liefert Qualität bis ins kleinste Detail. Die Zusammenarbeit war unkompliziert und durchweg professionell. Sehr empfehlenswert!',
+    created_at: '2026-06-11T10:00:00.000Z'
   }
-  return loadLocal();
+];
+
+async function fetchAllReviews() {
+  let rows = loadLocal();
+  if (supa) {
+    try {
+      // не ждём вечно: если база недоступна — отдаём отзывы сразу
+      const query = supa
+        .from('reviews')
+        .select('name, role, text, rating, language, created_at')
+        .order('created_at', { ascending: false });
+      const timeout = new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 1500));
+      const { data, error } = await Promise.race([query, timeout]);
+      if (!error && data) rows = data.map(r => ({ ...r, date: r.created_at }));
+    } catch (e) { /* база недоступна — показываем встроенные отзывы */ }
+  }
+  // встроенные отзывы реальных клиентов показываем всегда
+  return [...rows, ...SEED_REVIEWS];
 }
 
 async function pushReview(review) {
@@ -405,8 +432,7 @@ async function pushReview(review) {
   return true;
 }
 
-async function renderReviews() {
-  const all = await fetchAllReviews();
+function paintReviews(all) {
   const lang = (window.i18nLang && window.i18nLang()) || 'ru';
   const T = window.i18nT || {ru:{},en:{}};
   if (!all.length) {
@@ -430,6 +456,14 @@ async function renderReviews() {
       <time class="review__date">${formatDate(r.date || r.created_at)}</time>
     </article>
   `).join('');
+}
+
+async function renderReviews() {
+  // мгновенно показываем встроенные + локальные отзывы
+  paintReviews([...loadLocal(), ...SEED_REVIEWS]);
+  // если база оживёт — тихо дополним актуальными
+  const all = await fetchAllReviews();
+  paintReviews(all);
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function formatDate(d){const lang=(window.i18nLang&&window.i18nLang())||'ru';const D=new Date(d);return D.toLocaleDateString(lang==='en'?'en-US':'ru-RU',{day:'numeric',month:'long',year:'numeric'});}
