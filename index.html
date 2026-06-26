@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Unbounded:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="main.css?v=34" />
+  <link rel="stylesheet" href="main.css?v=35" />
   <style id="about-fix">
     /* Компактное фото и сертификаты-thumbnails */
     .about { grid-template-columns: auto 1fr !important; gap: 40px !important; align-items: start !important; }
@@ -87,6 +87,21 @@
   <meta http-equiv="Expires" content="0" />
 
   <style id="reveal-anim">
+    /* Кнопка «наверх» */
+    .to-top {
+      position: fixed; right: 24px; bottom: 24px; z-index: 90;
+      width: 46px; height: 46px; border-radius: 50%;
+      display: grid; place-items: center; cursor: pointer;
+      background: rgba(13,18,48,.7); backdrop-filter: blur(8px);
+      border: 1px solid var(--border); color: var(--text);
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+      transition: opacity .3s, transform .3s, border-color .2s, background .2s;
+    }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    .to-top:hover { border-color: var(--c-cyan); background: rgba(0,224,248,.16); transform: translateY(-3px); }
+    .to-top svg { width: 20px; height: 20px; }
+    @media (max-width: 600px) { .to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; } }
+
     /* Кнопка «Все работы» под сеткой портфолио */
     .work-more { display: flex; justify-content: center; margin-top: 48px; }
     .work-more__btn { min-width: 260px; text-align: center; box-sizing: border-box; }
@@ -546,14 +561,18 @@
     </div>
   </div>
 
+  <button class="to-top" id="toTop" aria-label="Наверх" title="Наверх">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
   <footer class="footer">
     <img src="assets/logo-nataly.png" alt="Натали" class="footer__logo" />
     <p>© <span id="year"></span> <span data-i18n="footer.name">Наталья Ковпинец</span> · <span data-i18n="footer.role">Дизайн и разработка под ключ</span></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="i18n.js?v=34"></script>
-  <script src="script.js?v=34"></script>
+  <script src="i18n.js?v=35"></script>
+  <script src="script.js?v=35"></script>
   <script>
     // Мягкое появление блоков по всему сайту
     (function () {
@@ -579,6 +598,16 @@
           els.forEach(function (e) { io.observe(e); });
         });
       });
+    })();
+
+    // Кнопка «наверх»
+    (function () {
+      var btn = document.getElementById('toTop');
+      if (!btn) return;
+      function onScroll() { btn.classList.toggle('show', window.scrollY > 400); }
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     })();
   </script>
 </body>
